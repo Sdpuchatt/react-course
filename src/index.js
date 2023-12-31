@@ -1,17 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React, {useState} from "react";
+import ReactDOM from "react-dom/client";
+import { TaskCard } from "./Task";
+import {Button} from "./Button";
+import {Counter} from "./Counter";
+import {Mensaje} from "./Mensaje";
+const root = ReactDOM.createRoot(document.getElementById("root"));
+// npx create-react-app myAplicacion
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <>
+        <TaskCard flag={false}/>
+        <Button nombre="Aceptar"/>
+        <input onChange={function(e){
+            console.log(e.target.value)
+        }}/>
+        <Counter/>
+        <Mensaje/>
+    </>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
